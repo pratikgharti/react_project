@@ -1,16 +1,60 @@
-# React + Vite
+# Task Manager
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A simple, clean task manager built with React. Add, edit, organize, and complete your daily tasks, with everything saved in your browser so nothing is lost on refresh.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+- Add, edit, delete, and mark tasks as complete
+- Filter tasks by status: All, Active, Completed
+- Organize tasks by category: Work, Personal, Urgent
+- Filter tasks by category
+- Tasks persist with localStorage
+- Live count of remaining and completed tasks
+- Clear all completed tasks in one click
+- Empty states for no tasks and no filter matches
+- Responsive layout for desktop and mobile
 
-## React Compiler
+## Technologies
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- React 18 (functional components and hooks only)
+- Vite (build tool and dev server)
+- ESLint (Vite React template configuration)
+- Plain CSS
 
-## Expanding the ESLint configuration
+## Project Structure
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+```
+src/
+  components/   Header, TaskForm, FilterBar, TaskList, TaskItem
+  hooks/        useLocalStorage.jsx
+  constants.jsx Categories and status filters
+  App.jsx       Main state and logic
+  index.css     Styles
+```
+
+## Setup
+
+```bash
+npm install
+npm run dev
+```
+
+Then open the local URL printed in the terminal (usually http://localhost:5173).
+
+To check the code with ESLint:
+
+```bash
+npm run lint
+```
+
+To create a production build:
+
+```bash
+npm run build
+```
+
+## Known Limitations
+
+- Tasks are stored per browser, so they do not sync across devices
+- No drag-and-drop reordering
+- Categories are fixed and cannot be customized
